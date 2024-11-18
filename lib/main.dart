@@ -6,6 +6,8 @@ import 'screens/anime_info_page.dart';
 import 'screens/notes_page.dart';
 import 'screens/opinion_page.dart';
 import 'screens/auth_page.dart';
+import 'screens/upload_panel_page.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
@@ -13,8 +15,7 @@ void main() async {
   try {
     await Firebase.initializeApp();
   } catch (e) {
-    print("Error initializing Firebase: $e");
-    // You might want to handle the error gracefully here, perhaps show an error message to the user
+    // something bad happened
   }
   runApp(const LookBackApp());
 }
@@ -38,6 +39,7 @@ class LookBackApp extends StatelessWidget {
         '/counter-kyomoto': (context) => const CounterKyomotoPage(),
         '/notes': (context) => const NotesPage(),
         '/opinions': (context) => OpinionPage(),
+        '/upload-panel': (context) => const UploadPanelPage(),
         '/auth': (context) => const AuthPage(),
       },
       onUnknownRoute: (settings) {

@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
             const Column(
               children: [
                 CircleAvatar(
-                  backgroundImage: AssetImage('lib/assets/images/Kyomoto.jpg'),
+                  backgroundImage: AssetImage('lib/assets/images/kyomoto.jpg'),
                   radius: 60,
                 ),
                 SizedBox(height: 16),
@@ -129,6 +129,21 @@ class HomePage extends StatelessWidget {
                         horizontal: 16, vertical: 12),
                   ),
                 ),
+                // Add Post Section
+                ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pushNamed(context, '/upload-panel');
+                  },
+                  icon: const Icon(Icons.add, size: 20),
+                  label: const Text('Share Your Favorite Panel'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 12),
+                  ),
+                ),
+
+                const SizedBox(height: 40),
                 ElevatedButton.icon(
                   onPressed: () {
                     Navigator.pushNamed(context, '/auth');
